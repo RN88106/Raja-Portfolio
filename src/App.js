@@ -12,21 +12,18 @@ import HeaderPhone from './Component/HeaderPhone';
 function App() {
 
   const [menuopen, setmenuopen] = useState(false)
-  const [ratio, setratio] = useState(window.innerWidth / window.innerHeight)
+  const [ratio, setRatio] = useState(window.innerHeight / window.innerWidth);
+  useEffect(() => {
+    const resizeRatio = () => {
+      setRatio(window.innerHeight / window.innerWidth);
+    };
 
-useEffect(() => {
+    window.addEventListener("resize", resizeRatio);
 
-  const resizeRatio  = () =>{
-    setratio(window.innerWidth / window.innerHeight)
-  }
-
-  window.addEventListener("resize", resizeRatio)
-  
-
-  return () => {
-    window.removeEventListener("resize", resizeRatio)
-  }
-}, [ratio])
+    return () => {
+      window.removeEventListener("resize", resizeRatio);
+    };
+  }, [ratio]);
 
 
 
