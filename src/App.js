@@ -12,10 +12,10 @@ import HeaderPhone from './Component/HeaderPhone';
 function App() {
 
   const [menuopen, setmenuopen] = useState(false)
-  const [ratio, setRatio] = useState(window.innerHeight / window.innerWidth);
+  const [ratio, setRatio] = useState(window.innerWidth / window.innerHeight);
   useEffect(() => {
     const resizeRatio = () => {
-      setRatio(window.innerHeight / window.innerWidth);
+      setRatio(window.innerWidth / window.innerHeight);
     };
 
     window.addEventListener("resize", resizeRatio);
@@ -27,7 +27,7 @@ function App() {
 
 
 
-  return ratio < 2 ? (
+  return ratio < 3 ? (
     <>
     <HeaderPhone menuopen={menuopen} setmenuopen={setmenuopen} />
     <Header menuopen={menuopen} setmenuopen={setmenuopen} />
