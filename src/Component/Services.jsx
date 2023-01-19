@@ -32,7 +32,7 @@ const Services = () => {
         <h2> SERVICES </h2>
         <section>
             <motion.div className='servicesbox1'whileInView={animations.whileInView} initial={animations.one}>
-                <h3>1.5+</h3>
+                <h3>2+</h3>
                 <p> Years Experiences </p>
             </motion.div>
             <motion.div className='servicesbox2'whileInView={animations.whileInView} initial={animations.twoAndThree}>
